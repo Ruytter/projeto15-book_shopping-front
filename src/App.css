@@ -1,38 +1,193 @@
 .App {
+  font-size: 14px;
+}
+
+main {
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+main .livro {
+  max-width: 200px;
+  margin: 3px;
+}
+header{
+  width: 100%;
+  position: fixed;
+  margin: 0 auto;
+  top:0
+}
+
+header div {
+  margin-top: -20px;
+  height: 50px;
+  background-color: #bfefec;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header div img {
+  height: 90px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+section {
+  background-color: #4eaa78;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+section div{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section div img{
+  width: 40px;
+  height: 40px;
+}
+
+section div p{
+  font-size: 15px;
+  font-weight: 600;
+  position: absolute;
+  top: 8px;
+}
+
+section div .quant{
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  top: 5px;
+  left: 20px;
+}
+
+h1 {
+  margin: 0;
+  color: #09331c;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+}
+
+article {
+  width: 100%;
+  height: 100%;
+}
+article div{
+  width: 200px;
+  height: 250px;
+}
+
+article img {
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  margin-top: 3px;
+}
+
+span {
+  float: left;
+  padding: 4px;
+  background-color: #127d00;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h6,
+.preco {
+  padding: 4px;
+  font-weight: bold;
+  color: #127d00;
+  float: right;
+  background-color: #bfefec;
+  cursor:default;
+}
+
+.sidebar{
+  width: 0px;
+  background-color: #127d00;
+  text-align: center;
+  position: fixed;
+  top: 83px;
+  right: 0px;
+  transition: 0.5s;
+}
+
+.sidebar .carrinho{
+  margin: 4px;
+  text-align: center;
+  background-color: #bfefec;
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar .carrinho img{
+  width: 20px;
+}
+
+.sidebar .fechar_compra{
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar button{
+  background: #bfefec;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebar div .comprar{
+  font-size: 16px;
+  font-weight: 600;
+  color: #127d00;
+  background: #bfefec;;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.showsidebar{
+  width: 350px;
+  transition: 0.5s;
+}
+
+
+.login{
+  width: 414px;
+  margin: 71px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+  
+.hide {
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.login input,
+.login button {
+  width: 100%;
+  height: 58px;
+  margin: 5px 0;
+  background: #ffffff;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login input {
+  font-weight: 600;
+  font-size: 20px;
+}
+::placeholder {
+  color: #000000;
+}
+
+.login button {
+  background: #bfefec;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
 }
