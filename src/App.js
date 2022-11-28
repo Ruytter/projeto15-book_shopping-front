@@ -1,14 +1,15 @@
 import logo from "./logo.png";
 import Sign from "./pages/Login";
 import Home from "./pages/Home";
+import Pedidos from "./pages/Pedidos";
 import React, { useState } from "react";
 import { Link, BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthProvider from "./pages/auth.js";
-// import styled from "styled-components";
 import "./App.css";
 
 function App() {
   const [quant, setQuant] = useState(0);
+  const [user, setUser] = useState("");
   const [showcar, setShowcar] = useState("sidebar");
   const [classe, setClasse] = useState("hide");
   return (
@@ -17,7 +18,11 @@ function App() {
         <div className="App">
           <header>
             <div>
+              <Link to={"/meus-pedidos"}>
+                <h2 className="pedidos">Meus pedidos</h2>
+              </Link>
               <img src={logo} className="App-logo" alt="logo" />
+              <h2 className="user">Benvindo/a {user}</h2>
             </div>
             <section>
               <h1>
@@ -38,20 +43,29 @@ function App() {
                 <p className="quant">{quant}</p>
               </div>
               <div>
-              <Link to={`/sign-in`}>
-              <p className={classe === "hide" ? "" : "hide"}  onClick={() => setClasse("hide")}>Log-in</p>
-              </Link>
-              <p className={classe}>Sign-up</p>
+                <Link to={`/sign-in`}>
+                  <p
+                    className={classe === "hide" ? "" : "hide"}
+                    onClick={() => setClasse("hide")}
+                  >
+                    Log-in
+                  </p>
+                </Link>
+                <p className={classe}>Log-out</p>
               </div>
             </section>
           </header>
           <Routes>
-            <Route path="/sign-in" element={<Sign setClasse={setClasse} classe={classe} />}></Route>
+            <Route
+              path="/sign-in"
+              element={<Sign setClasse={setClasse} classe={classe} />}
+            ></Route>
             <Route path="/sign-up" element={<Sign />}></Route>
             <Route
               path="/"
               element={
                 <Home
+                  setUser={setUser}
                   quant={quant}
                   setQuant={setQuant}
                   showcar={showcar}
@@ -59,7 +73,7 @@ function App() {
                 />
               }
             ></Route>
-            {/* <Route path="/fecharpedido" element={<Registrar />}></Route> */}
+            <Route path="/meus-pedidos" element={<Pedidos />}></Route>
           </Routes>
         </div>
       </AuthProvider>
@@ -68,8 +82,3 @@ function App() {
 }
 
 export default App;
-// const Container = styled.div`
-//   width: 414px;
-//   min-height: 600px;
-//   margin: 75px auto;
-// `;

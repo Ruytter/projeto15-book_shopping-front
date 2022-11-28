@@ -1,4 +1,4 @@
-// import styled from "styled-components"
+
 import CardProduto from "./CardProduto"
 
 export default function ListaProdutos(props) {
@@ -10,7 +10,3 @@ export default function ListaProdutos(props) {
     )
 }
 
-// const ContainerLista = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-// `;

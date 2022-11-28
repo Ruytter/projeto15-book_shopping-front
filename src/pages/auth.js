@@ -8,8 +8,8 @@ function AuthProvider({ children }) {
 
   function signin(u) {
     setUser({ u });
-    localStorage.setItem("mywalletUser", JSON.stringify(u));
-    navigate(`/saldo`);
+    localStorage.setItem("bookshop", JSON.stringify(u));
+    navigate(`/`);
   }
 
   return (

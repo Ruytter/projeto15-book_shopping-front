@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "./auth.js";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-//  import styled from "style-components";
 
 export default function Sign(props) {
   const { signin } = useContext(AuthContext);
@@ -36,11 +35,14 @@ export default function Sign(props) {
   }
   function Entrar(e) {
     e.preventDefault();
-    const URL = "http://localhost:5000/";
+
+
+    const URL = "http://localhost:5000/sign-in";
     const body = {
       email,
       password,
     };
+    console.log(body)
     const promise = axios.post(URL, body);
     promise.then((user) => {
       signin(user.data);
@@ -109,38 +111,3 @@ export default function Sign(props) {
   );
 }
 
-// const Main = styled.div`
-//   width: 414px;
-//   height: 736px;
-//   margin: -75px auto;
-//   background: #8c11be;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   footer {
-//     width: 80%;
-//     text-align: center;
-//     font-family: "Raleway";
-//     font-style: normal;
-//     font-weight: 700;
-//     font-size: 15px;
-//     line-height: 18px;
-//     color: #ffffff;
-//     display: flex;
-//     justify-content: center;
-//     button {
-//       width: 155px;
-//       height: 114px;
-//       padding: 5px;
-//       font-size: 17px;
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: center;
-//     }
-//     p {
-//       text-align: start;
-//       color: white;
-//     }
-//   }
-// `;
